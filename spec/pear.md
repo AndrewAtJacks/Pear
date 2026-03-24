@@ -199,6 +199,15 @@ fn main()->i32{x:i32=10;y:i32=20;swap(&x,&y);rt 0}
 
 ---
 
+## LLM Guidelines
+
+Rules for AI code generation in Pear:
+
+- **Prefer `puts` over `printf` for string-only output.** `puts(str)` auto-appends a newline and costs fewer tokens than `printf("str\n")`. Only use `printf` when a format string with arguments is needed.
+- **Prefer `fputs` over `fprintf` for string-only output to a stream.** Same reasoning — reserve `fprintf` for actual format arguments.
+
+---
+
 ## Compiler Usage
 
 ```sh
