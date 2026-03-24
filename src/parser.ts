@@ -242,7 +242,8 @@ export type Expr =
   | CastExpr
   | SizeofExpr
   | InitListExpr
-  | FuncPtrExpr;
+  | FuncPtrExpr
+  | ParenExpr;
 
 export interface NumberLiteral { kind: 'NumberLiteral'; value: string; }
 export interface StringLiteral { kind: 'StringLiteral'; value: string; }
@@ -262,6 +263,7 @@ export interface CastExpr { kind: 'CastExpr'; targetType: TypeNode; expr: Expr; 
 export interface SizeofExpr { kind: 'SizeofExpr'; operand: Expr | TypeNode; isType: boolean; }
 export interface InitListExpr { kind: 'InitListExpr'; elements: Expr[]; }
 export interface FuncPtrExpr { kind: 'FuncPtrExpr'; name: string; params: ParamDecl[]; returnType: TypeNode; }
+export interface ParenExpr { kind: 'ParenExpr'; expr: Expr; }
 
 // ─── Parser ──────────────────────────────────────────────────────────────────
 
@@ -1283,7 +1285,7 @@ export class Parser {
 
       const expr = this.parseExpr();
       this.eat(TokenType.RPAREN);
-      return expr;
+      return { kind: 'ParenExpr', expr };
     }
 
     // Identifiers (including keywords used as identifiers in context)

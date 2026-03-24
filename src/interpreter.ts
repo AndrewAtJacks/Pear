@@ -864,6 +864,7 @@ export class Interpreter {
       case 'SizeofExpr': return this.evalSizeof(expr, scope);
       case 'InitListExpr': return this.evalInitList(expr, scope);
       case 'FuncPtrExpr': return mkPtr(0, expr.name);
+      case 'ParenExpr': return this.evalExpr(expr.expr, scope);
       default:
         return VOID;
     }

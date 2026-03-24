@@ -657,6 +657,11 @@ export class CodeGenerator {
         return '{' + il.elements.map(e => this.genExprStr(e)).join(',') + '}';
       }
 
+      case 'ParenExpr': {
+        const pe = expr as import('./parser').ParenExpr;
+        return '(' + this.genExprStr(pe.expr) + ')';
+      }
+
       default:
         return '/* unknown expr */';
     }
