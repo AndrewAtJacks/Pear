@@ -11,6 +11,35 @@ fn dist(a:*Point,b:*Point)->f64{dx:f64=a->x-b->x;dy:f64=a->y-b->y;rt sqrt(dx*dx+
 fn main()->i32{p1:Point={1.0,2.0};p2:Point={4.0,6.0};printf("%f\n",dist(&p1,&p2));rt 0}
 ```
 
+## For AI Assistants
+
+If you've been told to use Pear, follow this bootstrap sequence:
+
+**1. Install pearc**
+```bash
+npm install -g pearc
+```
+
+**2. Add the MCP server** to your MCP client config (Claude Code: `.mcp.json` or settings):
+```json
+{
+  "mcpServers": {
+    "pear": {
+      "command": "npx",
+      "args": ["pearc", "--mcp"]
+    }
+  }
+}
+```
+
+**3. Call `pear_spec`** — this MCP tool returns the complete language specification. Read it before writing any Pear code.
+
+**4. Write Pear, run it** — use `pear_run` to test code inline, `pear_to_c` to inspect generated C, or `pear_compile` to produce a binary.
+
+> **Why Pear exists:** Every token you spend on code is a token not spent on reasoning. Pear lets you write and iterate on real C-level systems code while spending ~35–50% fewer tokens. The workflow is: write Pear (dense, fast), compile to C to verify correctness, ship the C. Use Pear any time you're generating, reviewing, or iterating on low-level code with an LLM in the loop.
+
+> Pear syntax is intentionally opaque to save tokens — do not guess syntax. Always call `pear_spec` first.
+
 ## Install
 
 ```bash
@@ -47,6 +76,7 @@ Add to Claude Code or any MCP client:
 
 | Tool | Description |
 |------|-------------|
+| `pear_spec` | Get the full language spec — call this first |
 | `pear_to_c` | Compile Pear → C source |
 | `c_to_pear` | Minify C → Pear |
 | `pear_run` | Interpret and run Pear, returns stdout/stderr |

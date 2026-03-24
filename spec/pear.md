@@ -1,5 +1,18 @@
 # Pear Language Specification
 
+## Purpose
+
+Pear exists to reduce LLM token consumption on low-level code. Every token spent on boilerplate (return types, long keywords, verbose declarations) is a token not spent on reasoning. Pear lets you write real, executable C-level code at ~35–50% of the token cost of idiomatic C.
+
+**The workflow:**
+1. Write code in Pear (dense, token-efficient)
+2. Use `pear_run` to test inline — no C compiler needed
+3. Use `pear_to_c` to inspect or ship the generated C
+4. Use `pear_compile` when you need a native binary
+
+**Use Pear when:** generating, reviewing, or iterating on systems code with an LLM in the loop.
+**Do not use Pear when:** the code is written once and never touched by an LLM again — just write C.
+
 Pear is an ultra-minified low-level language that transpiles to C. The goal is maximum token density — every byte saved matters.
 
 File extension: `.pr`
@@ -206,8 +219,15 @@ pearc --decompile hello.c
 
 ## MCP Server
 
-The MCP server exposes three tools:
+Start with `pearc --mcp` or via the MCP config:
+```json
+{ "mcpServers": { "pear": { "command": "npx", "args": ["pearc", "--mcp"] } } }
+```
 
+Tools exposed:
+
+- `pear_spec()` — returns this spec; call first before writing any Pear
 - `pear_to_c(code)` — compile Pear to C source
 - `c_to_pear(code)` — decompile C to minified Pear
-- `pear_compile(code, output_file)` — compile Pear to binary via gcc/clang
+- `pear_run(code, args?, stdin?)` — interpret and run Pear directly, returns stdout/stderr/exitCode
+- `pear_compile(code, output_file, compiler?, flags?)` — compile Pear to binary via gcc/clang
