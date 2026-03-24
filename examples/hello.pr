@@ -1,0 +1,2 @@
+im<stdio.h>
+fn main()->i32{printf("Hello, World!\n");rt 0}

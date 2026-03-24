@@ -1,0 +1,40 @@
+{
+  "name": "pearc",
+  "version": "0.1.0",
+  "description": "Pear language — ultra-minified C-targeting language for token-efficient LLM workflows",
+  "keywords": ["pear", "language", "compiler", "c", "llm", "mcp", "minification"],
+  "license": "MIT",
+  "author": "Andrew Hein",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewhein/pearc"
+  },
+  "main": "dist/compiler.js",
+  "files": [
+    "dist/",
+    "spec/",
+    "examples/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "compile": "node dist/compiler.js",
+    "decompile": "node dist/compiler.js --decompile",
+    "run": "node dist/compiler.js run",
+    "mcp": "node dist/mcp-server.js",
+    "dev": "ts-node src/compiler.ts"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "bin": {
+    "pearc": "dist/compiler.js"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(node dist/compiler.js --decompile /tmp/test.c)",
+      "Bash(node dist/compiler.js examples/hello.pr --binary -o /tmp/hello_pear)",
+      "Bash(\"C:/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -find \"VC\\\\Tools\\\\MSVC\\\\**\\\\bin\\\\Hostx64\\\\x64\\\\cl.exe\")",
+      "Bash(\"C:/Program Files \\(x86\\)/Microsoft Visual Studio/Installer/vswhere.exe\" -latest -products '*' -find \"**\\\\cl.exe\")",
+      "Bash(node dist/compiler.js examples/hello.pr --binary -o \"C:/Users/andrew.hein/AppData/Local/Temp/hello_pear\")",
+      "Bash(node -e \":*)",
+      "Bash(node \"C:/Users/andrew.hein/AppData/Local/Temp/test_msvc.js\")",
+      "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js run examples/hello.pr)",
+      "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js run examples/structs.pr)",
+      "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js run examples/pointers.pr)",
+      "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js --run examples/hello.pr)",
+      "Bash(node dist/compiler.js run examples/hello.pr)",
+      "Bash(npm view:*)"
+    ]
+  }
+}

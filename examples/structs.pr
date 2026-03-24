@@ -1,0 +1,6 @@
+im<stdint.h>
+im<math.h>
+im<stdio.h>
+st Point{x:f64;y:f64}
+fn dist(a:*Point,b:*Point)->f64{dx:f64=a->x-b->x;dy:f64=a->y-b->y;rt sqrt(dx*dx+dy*dy)}
+fn main()->i32{p1:Point={1.0,2.0};p2:Point={4.0,6.0};d:f64=dist(&p1,&p2);printf("Distance: %f\n",d);rt 0}

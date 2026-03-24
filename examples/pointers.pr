@@ -1,0 +1,32 @@
+im<stdio.h>
+im<stdint.h>
+im<stdlib.h>
+
+// Pointer arithmetic example
+fn swap(a:*i32,b:*i32){tmp:i32=*a;*a=*b;*b=tmp}
+
+fn sum_array(arr:*i32,n:i32)->i32{
+  total:i32=0
+  lp(i:i32=0;i<n;i++){total+=arr[i]}
+  rt total
+}
+
+fn main()->i32{
+  x:i32=10
+  y:i32=20
+  printf("Before: x=%d y=%d\n",x,y)
+  swap(&x,&y)
+  printf("After: x=%d y=%d\n",x,y)
+
+  nums:i32[5]={1,2,3,4,5}
+  printf("Sum: %d\n",sum_array(nums,5))
+
+  // Dynamic allocation
+  buf:*i32=(i32*)malloc(10*sz(i32))
+  lp(i:i32=0;i<10;i++){buf[i]=i*i}
+  lp(i:i32=0;i<10;i++){printf("%d ",buf[i])}
+  printf("\n")
+  free(buf)
+
+  rt 0
+}
