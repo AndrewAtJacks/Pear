@@ -61,7 +61,7 @@ File extension: `.pr`
 | nd   | #ifndef guard  |
 | dn   | #endif         |
 | pr   | #pragma        |
-| sz   | sizeof         |
+| so   | sizeof         |
 
 ---
 
@@ -130,13 +130,13 @@ p->field     // arrow member access
 ### Cast
 ```pear
 (i32)someFloat
-(*i32)malloc(n*sz(i32))
+(*i32)malloc(n*so(i32))
 ```
 
 ### Sizeof
 ```pear
-sz(i32)      // sizeof(int32_t)
-sz(myVar)    // sizeof(myVar)
+so(i32)      // sizeof(int32_t)
+so(myVar)    // sizeof(myVar)
 ```
 
 ### Ternary

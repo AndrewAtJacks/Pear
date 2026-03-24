@@ -54,7 +54,7 @@ const C_TO_PEAR_KEYWORDS: [RegExp, string][] = [
   [/\bbreak\b/g, 'bk'],
   [/\bcontinue\b/g, 'ct'],
   [/\bgoto\b/g, 'gt'],
-  [/\bsizeof\b/g, 'sz'],
+  [/\bsizeof\b/g, 'so'],
 ];
 
 // Preprocessor mapping

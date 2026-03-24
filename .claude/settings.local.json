@@ -14,7 +14,8 @@
       "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js run examples/pointers.pr)",
       "Bash(node /c/Users/andrew.hein/UserRoot/Code/Pear/dist/compiler.js --run examples/hello.pr)",
       "Bash(node dist/compiler.js run examples/hello.pr)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(node dist/compiler.js /dev/stdin)"
     ]
   }
 }

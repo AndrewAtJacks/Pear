@@ -87,7 +87,7 @@ Add to Claude Code or any MCP client:
 | `im` | #include |
 | `df` | #define |
 | `pr` | #pragma |
-| `sz` | sizeof |
+| `so` | sizeof |
 
 ### Syntax
 

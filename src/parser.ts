@@ -1176,7 +1176,7 @@ export class Parser {
     if (this.check(TokenType.PLUS)) { this.advance(); return { kind: 'UnaryExpr', op: '+', operand: this.parseUnary(), prefix: true }; }
 
     // sizeof
-    if (this.check(TokenType.SZ)) {
+    if (this.check(TokenType.SO)) {
       this.advance();
       this.eat(TokenType.LPAREN);
       // Check if it's a type or expression

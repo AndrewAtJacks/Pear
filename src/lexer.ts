@@ -55,6 +55,7 @@ export enum TokenType {
   C = 'c',
   B = 'b',
   SZ = 'sz',
+  SO = 'so',
 
   // Operators & Punctuation
   PLUS = '+',
@@ -161,6 +162,7 @@ const KEYWORDS: Record<string, TokenType> = {
   c: TokenType.C,
   b: TokenType.B,
   sz: TokenType.SZ,
+  so: TokenType.SO,
 };
 
 export class Lexer {
