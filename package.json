@@ -1,6 +1,6 @@
 {
   "name": "pearc",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Pear language — ultra-minified C-targeting language for token-efficient LLM workflows",
   "keywords": [
     "pear",
