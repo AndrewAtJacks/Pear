@@ -7,7 +7,7 @@
   "author": "Andrew Hein",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrewhein/pearc"
+    "url": "https://github.com/AndrewAtJacks/Pear"
   },
   "main": "dist/compiler.js",
   "files": [
